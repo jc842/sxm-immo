@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sortedPosts = posts.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime());
+const featuredPosts = sortedPosts.slice(0, 6);
+const remainingPosts = sortedPosts.slice(6, 40);
+---
+
+<Layout title="SXM Immo — Immobilier Saint-Martin & Sint Maarten : Terres Basses, Orient Bay, Simpson Bay">
+  <!-- Hero Section Williamsburg -->
+  <section class="relative border-b border-amber-950/60 bg-stone-950 py-16 sm:py-24 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(217,119,6,0.12),transparent_60%)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6">
+      
+      <!-- Top Pill -->
+      <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/30 px-3.5 py-1.5 text-xs text-amber-300 font-semibold">
+        <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+        MARCHÉ IMMOBILIER BINATIONAL CARIBÉEN
+      </div>
+
+      <!-- Headline -->
+      <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl max-w-4xl leading-tight">
+        L'Immobilier de Référence à <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">Saint-Martin & Sint Maarten</span>.
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-base sm:text-lg text-stone-300 leading-relaxed font-light">
+        Domaines ultra-privés aux Terres Basses, appartements pieds dans l'eau à Orient Bay, penthouses marina à Simpson Bay et expertise binationale.
+      </p>
+
+      <!-- Key Pillars Row -->
+      <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 lg:gap-6">
+        <div class="rounded-xl border border-amber-950/60 bg-stone-900/50 p-5 backdrop-blur-sm">
+          <div class="text-[11px] text-amber-400 uppercase tracking-widest font-semibold">Terres Basses</div>
+          <div class="mt-2 text-2xl font-bold text-white">10 000 m²</div>
+          <div class="mt-1 text-xs text-stone-400">Domaines sécurisés 24/7</div>
+        </div>
+        <div class="rounded-xl border border-amber-950/60 bg-stone-900/50 p-5 backdrop-blur-sm">
+          <div class="text-[11px] text-amber-400 uppercase tracking-widest font-semibold">Partie Hollandaise</div>
+          <div class="mt-2 text-2xl font-bold text-orange-400">0% Plus-Value</div>
+          <div class="mt-1 text-xs text-stone-400">Fiscalité en dollars US</div>
+        </div>
+        <div class="rounded-xl border border-amber-950/60 bg-stone-900/50 p-5 backdrop-blur-sm">
+          <div class="text-[11px] text-amber-400 uppercase tracking-widest font-semibold">Rendement Saisonnier</div>
+          <div class="mt-2 text-2xl font-bold text-white">7.5% à 10%</div>
+          <div class="mt-1 text-xs text-stone-400">Forte demande hivernale</div>
+        </div>
+        <div class="rounded-xl border border-amber-950/60 bg-stone-900/50 p-5 backdrop-blur-sm">
+          <div class="text-[11px] text-amber-400 uppercase tracking-widest font-semibold">Sécurité Actes</div>
+          <div class="mt-2 text-2xl font-bold text-amber-400">100% Notarié</div>
+          <div class="mt-1 text-xs text-stone-400">Titre de propriété garanti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Bento Articles -->
+  <section class="py-16 sm:py-20 bg-stone-950 border-b border-stone-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-amber-400 font-semibold">Études de Marché</span>
+          <h2 class="text-2xl font-bold text-white sm:text-3xl mt-1">Dernières Analyses et Fiches de Secteurs</h2>
+        </div>
+        <a href="/blog/" class="hidden sm:inline-flex items-center gap-2 text-xs text-amber-400 hover:text-amber-300 font-semibold">
+          VOIR LES 191 ARTICLES →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {featuredPosts.map((post) => (
+          <article class="group relative flex flex-col justify-between rounded-xl border border-amber-950/60 bg-stone-900/40 p-6 transition-all duration-300 hover:border-amber-500/40 hover:bg-stone-900/80">
+            <div>
+              <div class="flex items-center justify-between text-[11px] text-stone-400 mb-3">
+                <span class="rounded bg-amber-950/80 px-2 py-0.5 text-amber-300 font-semibold">{post.data.category || 'Immobilier'}</span>
+                <span>{new Date(post.data.pubDate).toLocaleDateString('fr-FR', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
+              </div>
+              <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors line-clamp-2 leading-snug">
+                <a href={'/blog/' + post.id + '/'}>
+                  {post.data.title}
+                </a>
+              </h3>
+              <p class="mt-3 text-xs text-stone-400 line-clamp-3 leading-relaxed">
+                {post.data.description}
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-stone-800/80 flex items-center justify-between text-xs">
+              <span class="text-stone-500">SXM Immo Dossier</span>
+              <a href={'/blog/' + post.id + '/'} class="text-amber-400 hover:underline flex items-center gap-1 font-semibold">
+                Consulter l'analyse →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Extended Library -->
+  <section class="py-16 bg-stone-900/20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6">
+      <h2 class="text-2xl font-bold text-white mb-8">
+        Conseils d'Investissement, Urbanisme & Quartiers
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {remainingPosts.map(post => (
+          <div class="flex items-start justify-between rounded-lg border border-stone-800 bg-stone-900/40 p-4 hover:border-amber-900/60 transition-colors">
+            <div class="pr-4">
+              <span class="text-[10px] text-amber-400 uppercase tracking-wider font-semibold">{post.data.category || 'Guide'}</span>
+              <h4 class="text-sm font-semibold text-stone-200 mt-1 hover:text-amber-300 transition-colors">
+                <a href={'/blog/' + post.id + '/'}>{post.data.title}</a>
+              </h4>
+            </div>
+            <a href={'/blog/' + post.id + '/'} class="text-xs text-amber-400 whitespace-nowrap pt-1 font-semibold">
+              Lire →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
