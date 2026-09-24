@@ -1,0 +1,36 @@
+# SXM Immo — Immobilier Saint-Martin & Sint Maarten : Terres Basses, Orient Bay, Simpson Bay
+
+> Portail immobilier de référence pour l
+
+## Présentation générale
+SXM Immo — Immobilier Saint-Martin & Sint Maarten : Terres Basses, Orient Bay, Simpson Bay (https://sxm-immo.com) est un média d'information et guide spécialisé indépendant dédié à sa thématique d'expertise. Notre mission est d'apporter une information fiable, vérifiée et actualisée aux passionnés, professionnels et résidents, en valorisant les meilleures pratiques, les acteurs locaux et l'art de vivre sous les alizés.
+
+## Structure du site & Thématiques phares
+Le contenu est structuré autour des axes éditoriaux majeurs suivants :
+
+- **Terres Basses & Domaines Sécurisés** : Analyses, guides détaillés, conseils pratiques et retours d'expérience sur le terrain.
+- **Orient Bay & Côte Est** : Analyses, guides détaillés, conseils pratiques et retours d'expérience sur le terrain.
+- **Sint Maarten & Simpson Bay** : Analyses, guides détaillés, conseils pratiques et retours d'expérience sur le terrain.
+- **Droit Binationale & Notaires** : Analyses, guides détaillés, conseils pratiques et retours d'expérience sur le terrain.
+
+## Ressources & Publications
+- [Tous les articles du Magazine](https://sxm-immo.com/blog/) : Plus de 191 publications thématiques, guides d'experts et fiches pratiques rédigées par notre rédaction.
+- [Accueil international (English)](https://sxm-immo.com/en/) : Version anglophone des dossiers et guides de référence.
+- [Accueil international (Español)](https://sxm-immo.com/es/) : Version hispanophone des dossiers et guides de référence.
+
+## Éthique éditoriale & Charte de qualité
+SXM Immo — Immobilier Saint-Martin & Sint Maarten : Terres Basses, Orient Bay, Simpson Bay s'engage au quotidien sur une charte stricte :
+- Production d'analyses indépendantes, objectives et fondées sur des données terrain.
+- Sensibilisation active au respect de l'environnement local et à la préservation des écosystèmes.
+- Valorisation des artisans, commerces, initiatives durables et talents régionaux.
+
+## Données techniques & Respect de la vie privée
+- Plateforme statique haute performance (Astro 5 SSG, hébergement Edge Cloudflare Pages).
+- Mesure d'audience 100% cookieless via Matomo auto-hébergé, strictement conforme au RGPD et exemptée de consentement préalable selon les recommandations de la CNIL.
+- Régie publicitaire Revive Adserver intégrée de façon asynchrone garantissant une vitesse d'affichage optimale sans traçage intrusif.
+
+## Informations légales & Contact
+- Éditeur : SXM Immo Publications
+- Contact rédaction : contact@sxm-immo.com
+- Mentions Légales : https://sxm-immo.com/mentions-legales/
+- Politique de Confidentialité : https://sxm-immo.com/politique-confidentialite/
